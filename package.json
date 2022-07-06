@@ -1,0 +1,19 @@
+{
+  "name": "dad_bot",
+  "version": "1.0.0",
+  "description": "dad jokes bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdpone/dadJokesBot.git"
+  },
+  "author": "Klyde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kdpone/dadJokesBot/issues"
+  },
+  "homepage": "https://github.com/kdpone/dadJokesBot#readme"
+}
