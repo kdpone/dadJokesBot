@@ -2,6 +2,7 @@ const { Client, Intents } = require('discord.js');
 const { token } = require('./config.json');
 const { key } = require('./config.json')
 
+//Joke as a string
 const options = {
     method: 'GET',
     headers: {
@@ -28,34 +29,22 @@ fetch('https://dad-jokes.p.rapidapi.com/random/joke/png', options)
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-client.on('ready', () => {
+client.once('ready', () => {
     console.log("DadBot Online")
     console.log(joke)
+    console.log(client.user.tag)
 
-    /* const guildID = '994064353026396193'
-    const guild = client.guilds.cache.get(guildID)
-    let commands
 
-    if (guild) {
-        commands = guild.commands
-    } else {
-        commands = client.applications.commands
-    }
 
-    commands.create({
-
-    }) */
 })
 
+client.on('interactionCreate', async interaction => {
+    if (!interaction.isCommand()) return;
 
-
-
-
-
-
-
-
-
+    if (interaction.commandName === 'joke') {
+        await interaction.reply(joke);
+    }
+});
 
 
 
