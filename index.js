@@ -1,10 +1,11 @@
 const { Client, Intents } = require('discord.js');
 const { token } = require('./config.json');
+const { key } = require('./config.json')
 
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '74a7863eeemsh7769330fc331b88p1eab73jsnd9c279c69637',
+        'X-RapidAPI-Key': key,
         'X-RapidAPI-Host': 'dad-jokes.p.rapidapi.com'
     }
 };
@@ -27,10 +28,27 @@ fetch('https://dad-jokes.p.rapidapi.com/random/joke/png', options)
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-client.once('ready', () => {
+client.on('ready', () => {
     console.log("DadBot Online")
     console.log(joke)
+
+    /* const guildID = '994064353026396193'
+    const guild = client.guilds.cache.get(guildID)
+    let commands
+
+    if (guild) {
+        commands = guild.commands
+    } else {
+        commands = client.applications.commands
+    }
+
+    commands.create({
+
+    }) */
 })
+
+
+
 
 
 
