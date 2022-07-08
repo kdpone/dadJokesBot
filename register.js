@@ -10,9 +10,6 @@ const commands = [
     }
 
 ];
-const clientId = '994059250957565972';
-const guildId = '994064353026396193';
-
 
 
 const rest = new REST({ version: '9' }).setToken(token);
@@ -22,7 +19,7 @@ const rest = new REST({ version: '9' }).setToken(token);
         console.log('Started refreshing application (/) commands.');
 
         await rest.put(
-            Routes.applicationCommands(clientId),
+            Routes.applicationCommands(id),
             { body: commands },
         );
 
